@@ -7,7 +7,8 @@ let maincontainer = document.querySelector(`.maincontainer`),
   bigmapmain = document.querySelector(`.bigmapmain`),
   bigmap = document.querySelector(`.bigmap`),
   returntoMain = document.querySelectorAll(`.return`),
-  refresh = document.querySelectorAll(`.refresh`),
+  refresh = document.querySelector(`.refresh`),
+  refresh2 = document.querySelector(`.refresh2`),
   axe = document.querySelector(`.axe`),
   axe2 = document.querySelector(`.axe2`),
   Shovel = document.querySelector(`.Shovel`),
@@ -54,13 +55,6 @@ for (let page = 0; page < returntoMain.length; page++) {
     smallmapmain.style.display = "none";
   });
 }
-for (let page = 0; page < refresh.length; page++) {
-  refresh[page].addEventListener(`click`, () => {
-    maincontainer.style.display = "none";
-    bigmapmain.style.display = "none";
-    smallmapmain.style.display = "grid";
-  });
-}
 
 function initializeSmallMap() {
   const smallgameBoard = [
@@ -99,7 +93,6 @@ function initializeBigMap() {
 
   generateSmallMape(biggameBoard, bigmap);
 }
-
 
 function generateSmallMape(smallgameBoard, map) {
 
@@ -336,4 +329,26 @@ dirtcounter.addEventListener(`click`,chooseElement)
 dirtcounter2.addEventListener(`click`,chooseElement)
 function chooseElement(){
   adStore=this; 
+  selectedtool=0;
+  
 }
+
+refresh.addEventListener(`click`,()=>{
+  smallmap.innerHTML = ``;
+  initializeSmallMap();
+  woodcounter.value=0;
+  leavescounter.value=0;
+  rockcounter.value=0;
+  grasscounter.value=0;
+  dirtcounter.value=0;
+})
+
+refresh2.addEventListener(`click`,()=>{
+  bigmap.innerHTML = ``;
+  initializeBigMap();
+  woodcounter2.value=0;
+  leavescounter2.value=0;
+  rockcounter2.value=0;
+  grasscounter2.value=0;
+  dirtcounter2.value=0;
+})

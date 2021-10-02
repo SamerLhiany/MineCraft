@@ -59,7 +59,7 @@ body {
     box-shadow: 0 2px 3px #ccc;
   }
 
-  .refresh {
+  .refresh, .refresh2 {
     grid-area: 2 / 1 / 3 / 2;
     display: inline-block;
     background-color: #1984c3;
